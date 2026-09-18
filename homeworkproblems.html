@@ -41,31 +41,136 @@
         </div>
         <div class="row">
             <div class="col-12mt-4">
-                <h3 data-bs-toggle="collapse" href="#1" role="button" aria-expanded="false" aria-controls="1">
+                <h3 data-bs-toggle="collapse" href="#1" role="button" aria-expanded="true" aria-controls="1">
                     Homework 1</h3>
             </div>
             <div class="col-12 border border-primary-subtle border-3">
-                <div id="1.3" class="collapse multi-collapse">
+                <div id="1" class="collapse show">
                     <div class="row">
                         <div class="col-6">
-                            <ol>
-                                <li>Problem 1: Calculate the Factorial
-Write a function named calculate_factorial(n) that takes a non-negative integer n and returns its factorial (n!). The factorial of a number is the product of all positive integers less than or equal to n (e.g., 5! = 5 x4 x3 x2 x1 = 120).
-Requirements:
-If n is 0, return 1 (since 0! = 1).
-Use a for or while loop to multiply the numbers together.
-Example Input: calculate_factorial(5)
+                            <h3>Problem 1: Calculate the Factorial</h3>
+                            <p>Write a function named <span class="quote">calculate_factorial(n)</span> that takes a non-negative integer n and
+                            returns its factorial (\(n!\)). The factorial of a number is the product of all positive
+                            integers less than or equal to n (e.g., \(5! = 5*4*3*2*1 = 120\)).</p>
+                            <b>Requirements:</b>
+                            <ul>
+                                <li>If n is 0, return 1 (since 0! = 1).</li>
+                                <li>Use a <span class="quote">for</span> or <span class="quote">while</span> loop to multiply the numbers together.</li>
+                            </ul>
+                            
+                            <b>Example Output:</b> (User input in red)
+                            <p class="output">Enter a number: <span class="user-input">5</span></p>
+                            <p class="output">120</p>
+                            <hr>
+                            
+                            <h3>Problem 2: Count the Vowels</h3>
+                            <p>Write a function named <span class="quote">count_vowels(text)</span> that takes a string as input and returns the total
+                            count of vowels (a, e, i, o, u) present in it.</p>
+                            <b>Requirements:</b>
+                            <ul>
+                                <li>The count should be case-insensitive (e.g., <span class="quote">'A'</span> and <span class="quote">'a'</span> both count).</li>
+                                <li>Loop through each character in the string to check if it is a vowel.</li>
+                            </ul>
+                            
+                            <b>Example Input:</b> (User input in red)
+                            <p class="output">Enter a string: <span class="user-input">hello world!</span></p>
+                            <p class="output">Vowels: 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-Problem 2: Count the Vowels
-Write a function named count_vowels(text) that takes a string as input and returns the total count of vowels (a, e, i, o, u) present in it.
-Requirements:
-The count should be case-insensitive (e.g., 'A' and 'a' both count).
-Loop through each character in the string to check if it is a vowel.
-Example Input: count_vowels("Hello World")
-
-</li>
-                                <li></li>
-                            </ol>
+            <div class="col-12mt-4">
+                <h3 data-bs-toggle="collapse" href="#2" role="button" aria-expanded="true" aria-controls="2">
+                    Homework 2</h3>
+            </div>
+            <div class="col-12 border border-primary-subtle border-3">
+                <div id="2" class="collapse show">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>Problem 1: Fruit Stand</h3>
+                            <p>WRite a Python program that helps a fruit stand customer check prices and calculate their total bill.</p>
+                            <b>Tasks:</b>
+                            <ul>
+                                <li>Create a dictionary named <span class="quote">fruit_prices</span> with the following items and prices:
+                                <ul>
+                                    <li>Apple: 1.50</li>
+                                    <li>Banana: 0.75</li>
+                                    <li>Orange: 1.25</li>
+                                    <li>Mango: 2.00</li>
+                                </ul></li>
+                                <li>Ask the user to enter the name of a fruit they want to buy.</li>
+                                <li>Check if the fruit is in the dictionary:
+                                    <ul>
+                                        <li>If it is in the dictionary, print its price, and ask the user how many they want to buy, and calculate the total cost for that item.</li>
+                                        <li>If it is not in the dictionary, print a message saying <span class="quote">"Sorry, we do not have that fruit!"</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            
+                            <b>Example Output:</b> (User input in red)
+                            <p class="output">Enter a fruit you want to buy: <span class="user-input">Apple</span></p>
+                            <p class="output">An Apple costs $1.5</p>
+                            <p class="output">How many would you like to buy? <span class="user-input">3</span></p>
+                            <p class="output">Your total cost is $4.50</p>
+                            <br>
+                            <b>Example Output:</b> (User input in red)
+                            <p class="output">Enter a fruit you want to buy: <span class="user-input">Dragonfruit</span></p>
+                            <p class="output">Sorry, we do not have that fruit!</p>
+                            <br>
+                            <b>Hints:</b>
+                            <ul>
+                                <li>Use <span class="quote">.lower()</span> or <span class="quote">.capitalize()</span> to make sure matching works even if the user types in lowercase.</li>
+                                <li>Use <span class="quote">in</span> to check if a key exists in your dictionary before looking up its value.</li>
+                                <li>Don't forget to convert the user's quantity input to an integer.</li>
+                            </ul>
+                            <hr>
+                            
+                            <h3>Problem 2: Classroom Gradebook</h3>
+                            <p>Write a Python program that calculates student averages for a teacher's gradebook without crashing when bad input is entered.</p>
+                            <b>Tasks:</b>
+                            <ul>
+                                <li>Create a dictionary named <span class="quote">gradebook</span> where the keys are student names and the values are empty lists<br>
+                                    <span class="quote">gradebook = {"Alex": [], "Taylor": [], "Jordan": []}</span></li>
+                                <li>Write a loop that continuously asks the user to enter a student's name (<span class="quote">Alex</span>, <span class="quote">Taylor</span>, or <span class="quote">Jordan</span>).
+                                <ul>
+                                    <li>If the user types in <span class="quote">"quit"</span>, the loop should stop.</li>
+                                    <li>If the student name is not in <span class="quote">gradebook</span>, print <span class="quote">"Student not found!"</span> and ask again.</li>
+                                </ul></li>
+                                <li>Once a valid student is chosen, prompt the user to enter a test score (0-100) and convert it to a <span class="quote">float</span>.</li>
+                                <li>Handle Exceptions (<span class="quote">try</span>/<span class="quote">catch</span>):
+                                <ul>
+                                    <li>If the user enters something that isn't a number (like <span class="quote">"eighty"</span> or <span class="quote">"absent"</span>), catch the <span class="quote">ValueError</span> and print <span class="quote">"Invalid score! Please enter a numeric grade."</span></li>
+                                    <li>If a valid float is entered, append it to that student's list in <span class="quote">gradebook</span>.</li>
+                                </ul></li>
+                                <li>After the user quits, print out each student's name along with their average test score.
+                                    <ul>
+                                        <li>Handle Zero Division (<span class="quote">try</span>/<span class="quote">except</span>): When calculating the average (<span class="quote">sum</span>/<span class="quote">len</span>), catch the <span class="quote">ZeroDivisionError</span> if a student has no grades entered, and print <span class="quote">"No grades recorded"</span> instead of an average.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <br>
+                            <b>Example Input:</b> (User input in red)
+                            <p class="output">Enter a student name (or 'quit' to finish): <span class="user-input">Alex</span></p>
+                            <p class="output">Enter grade for Alex: <span class="user-input">85</span></p>
+                            <p>Grade added!</p>
+                            <p class="output">Enter a student name (or 'quit' to finish): <span class="user-input">Alex</span></p>
+                            <p class="output">Enter grade for Alex: <span class="user-input">ninety</span></p>
+                            <p>Invalid score! Please enter a numeric grade.</p>
+                            <p class="output">Enter a student name (or 'quit' to finish): <span class="user-input">Jordan</span></p>
+                            <p class="output">Enter grade for Jordan: <span class="user-input">100</span></p>
+                            <p>Grade added!</p>
+                            <p>Enter a student name (or 'quit' to finish): <span class="user-input">quit</span></p>
+                            <p class="output">--- Final Averages ---</p>
+                            <p class="output">Alex: 85.0</p>
+                            <p class="output">Taylor: No grades recorded</p>
+                            <p class="output">Jordan: 100.0</p>
+                            <br>
+                            <b>Hints:</b>
+                            <ul>
+                                <li>Wrap <span class="quote">float(input(...))</span> inside a <span class="quote">try</span> block to catch <span class="quote">ValueError</span>.</li>
+                                <li>WRap your average calculation inside a <span class="quote">try</span> block to catch <span class="quote">ZeroDivisionError</span>.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -73,7 +178,7 @@ Example Input: count_vowels("Hello World")
         </div>
     </div>
     <footer class="footer">
-        
+
     </footer>
 
 </body>

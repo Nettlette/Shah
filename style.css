@@ -1,0 +1,17 @@
+.quote {
+    background-color: lightgrey;
+    border-radius: 15px;
+    font-family: 'Courier New';
+    padding-left: 3px;
+    padding-right: 3px;
+    font-weight: bold;
+}
+
+.output {
+    margin-bottom: 0;
+}
+
+.user-input {
+    color: red;
+    font-weight: bold;
+}
