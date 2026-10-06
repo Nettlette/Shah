@@ -1,3 +1,27 @@
+# Homework 1
+
+## Problem 1
+
+| Criteria | Description | Points |
+| --- | --- | --- |
+| Function Setup | Correctly defines calculate_factorial(n) and returns the calculated value using return. | 10 |
+| Loop & Product Logic | Implements a for or while loop to multiply numbers 1 through n correctly. | 15 |
+| Special Case (n=0) | Correctly handles 0!=1 without crashing or returning 0. | 10 |
+| Input/Output | "Prompts user for an integer, calls the function, and prints output matching requirements." | 7.5 |
+| Code Quality | "Proper indentation, clean variable naming (e.g., product, result), and readable style." | 7.5 |
+| Total | | 50 |
+
+## Problem 2
+
+| Criteria | Description | Points |
+| --- | --- | --- |
+| Function Setup | Correctly defines count_vowels(text) and returns the total vowel count using return. | 10 |
+| Loop & Character Check | Loops through each character in the string and checks if it is in 'aeiou'. | 15 |
+| Case Insensitivity | Handles uppercase and lowercase vowels using .lower() or checking both cases. | 10 |
+| Input/Output | "Prompts user for a string, calls the function, and prints output matching requirements." | 7.5 |
+| Code Quality | "Proper indentation, clean variable naming (e.g., vowel_count, char), and readable style." | 7.5 |
+| Total | | 50 |
+
 # Homework 2
 
 | Category | Criteria / Indicators | Point Value |
