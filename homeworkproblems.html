@@ -45,7 +45,7 @@
                     Homework 1</h3>
             </div>
             <div class="col-12 border border-primary-subtle border-3">
-                <div id="1" class="collapse show">
+                <div id="1" class="collapse">
                     <div class="row">
                         <div class="col-6">
                             <h3>Problem 1: Calculate the Factorial</h3>
@@ -85,7 +85,7 @@
                     Homework 2</h3>
             </div>
             <div class="col-12 border border-primary-subtle border-3">
-                <div id="2" class="collapse show">
+                <div id="2" class="collapse">
                     <div class="row">
                         <div class="col-6">
                             <h3>Problem 1: Fruit Stand</h3>
@@ -170,6 +170,52 @@
                             <ul>
                                 <li>Wrap <span class="quote">float(input(...))</span> inside a <span class="quote">try</span> block to catch <span class="quote">ValueError</span>.</li>
                                 <li>WRap your average calculation inside a <span class="quote">try</span> block to catch <span class="quote">ZeroDivisionError</span>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12mt-4">
+                <h3 data-bs-toggle="collapse" href="#3" role="button" aria-expanded="true" aria-controls="3">
+                    Homework 3</h3>
+            </div>
+            <div class="col-12 border border-primary-subtle border-3">
+                <div id="1" class="collapse show">
+                    <div class="row">
+                        <div class="col-6">
+                            <p>Write a program that reads raw temperature data from a CSV (comma separated values) file, calculates summary statistics, handles potential file/formatting errors, and writes a clean summary report to a new text file.</p>
+                            <b>Requirements:</b>
+                            <ul>
+                                <li>Raw data in file <span class="quote">weather_data.csv</span>. Some rows might have corrupted or missing temperature values.</li>
+                                <li>Read in data. A city may have multiple temperatures, or a non-numeric string.</li>
+                                <li>Print a statement when skipping an invalid row. (e.g., <span class="quote">Skipping invalid row for Miami</span></li>
+                                <li>Calculate the minimum, maximum, and average (mean) for each city.</li>
+                                <li>The output file should list each city, the total number of temperatures, the minimum temperature, the maximum temperature, and the average temperature. All calculated temperatures should be rounded to 1 decimal place.</li>
+                                <li>No user input required.</li>
+                            </ul>
+                            
+                            <b><span class="quote">weather_data.csv</span> Input file</b>
+                            <p class="output">City,Temperature<br>
+New York,72.5<br>
+Chicago,68.0<br>
+New York,75.0<br>
+Miami,invalid<br>
+Chicago,71.5<br>
+Miami,85.0<br>
+New York,70.0<br>
+Unknown,missing</p>
+                            
+                            <b><span class="quote">weather_data.csv</span> Output file example</b>
+                            <p class="output">New York: 3 readings, Avg Temp: 72.5°F<br>
+Chicago: 2 readings, Avg Temp: 69.8°F<br>
+Miami: 1 readings, Avg Temp: 85.0°F</p>
+                            <br>
+                            <b>Hints:</b>
+                            <ul>
+                                <li>Use a <span class="quote">dictionary</span> with <span class="quote">lists</span> as values to hold each city's data.</li>
+                                <li>Catch errors like <span class="quote">FileNotFoundError</span>, <span class="quote">ZeroDivisionError</span> and <span class="quote">ValueError</span>.</li>
+                                <li>Use the <span class="quote">statistics</span> or <span class="quote">math</span> library to calculate the average, minimum, and maximum.</li>
                             </ul>
                         </div>
                     </div>
