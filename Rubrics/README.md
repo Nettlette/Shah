@@ -42,56 +42,56 @@
 | Code Style & Formatting | • Meaningful variable names (city_temps, avg_temp, etc.).<br>• Clean indentation, structure, and helpful comments explaining error-handling logic. | 10 pts |
 
 ## Test Cases
-Input:
-City,Temperature
-New York,72.0
-Chicago,60.0
-New York,78.0
-Chicago,64.0
-Miami,80.0
+Input:<br>
+City,Temperature<br>
+New York,72.0<br>
+Chicago,60.0<br>
+New York,78.0<br>
+Chicago,64.0<br>
+Miami,80.0<br>
 
-Output:
-=== WEATHER SUMMARY REPORT ===
-New York: 2 readings, Avg Temp: 75.0°F
-Chicago: 2 readings, Avg Temp: 62.0°F
-Miami: 1 readings, Avg Temp: 80.0°F
+Output:<br>
+=== WEATHER SUMMARY REPORT ===<br>
+New York: 2 readings, Avg Temp: 75.0°F<br>
+Chicago: 2 readings, Avg Temp: 62.0°F<br>
+Miami: 1 readings, Avg Temp: 80.0°F<br>
 
-Input:
-City,Temperature
-Dallas,85.5
-Seattle,invalid
-Dallas,N/A
-Seattle,62.0
-Houston,
-Seattle,58.0
+Input:<br>
+City,Temperature<br>
+Dallas,85.5<br>
+Seattle,invalid<br>
+Dallas,N/A<br>
+Seattle,62.0<br>
+Houston,<br>
+Seattle,58.0<br>
 
-Output:
-Skipping invalid temperature for Seattle: invalid
-Skipping invalid temperature for Dallas: N/A
-Skipping invalid temperature for Houston:
-=== WEATHER SUMMARY REPORT ===
-Dallas: 1 readings, Avg Temp: 85.5°F
-Seattle: 2 readings, Avg Temp: 60.0°F
+Output:<br>
+Skipping invalid temperature for Seattle: invalid<br>
+Skipping invalid temperature for Dallas: N/A<br>
+Skipping invalid temperature for Houston:<br>
+=== WEATHER SUMMARY REPORT ===<br>
+Dallas: 1 readings, Avg Temp: 85.5°F<br>
+Seattle: 2 readings, Avg Temp: 60.0°F<br>
 
-Input:
+Input:<br>
 None
 
-Output:
+Output:<br>
 Error: The file 'weather_data.csv' was not found. Please check the file path.
 
-Input:
-City,Temperature
+Input:<br>
+City,Temperature<br>
 Boston,67.333333
 
-Output:
-=== WEATHER SUMMARY REPORT ===
+Output:<br>
+=== WEATHER SUMMARY REPORT ===<br>
 Boston: 1 readings, Avg Temp: 67.3°F
 
-Input:
-City,Temperature
-Denver , 50.0
+Input:<br>
+City,Temperature<br>
+Denver , 50.0<br>
 Denver, 54.0
 
-Output:
-=== WEATHER SUMMARY REPORT ===
+Output:<br>
+=== WEATHER SUMMARY REPORT ===<br>
 Denver: 2 readings, Avg Temp: 52.0°F
