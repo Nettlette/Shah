@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data Summarizer (PyScript)</title>
+    <!-- PyScript CSS & JS -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 30px auto; padding: 0 20px; line-height: 1.6; }
+        textarea { width: 100%; height: 160px; font-family: monospace; padding: 10px; }
+        button { background-color: #2b6cb0; color: white; border: none; padding: 10px 18px; font-size: 16px; border-radius: 4px; cursor: pointer; margin-top: 10px; }
+        button:hover { background-color: #1a4971; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; border: 1px solid #ccc; white-space: pre-wrap; }
+        .log-warning { color: #c05621; font-weight: bold; }
+        .log-error { color: #c53030; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>Weather Data Summarizer & Report Generator</h2>
+    <p>Modify the CSV contents below and click <strong>Process Weather Data</strong> to simulate file handling, exception processing, and report generation in PyScript.</p>
+
+    <label for="csv-input"><strong>Simulated Input File (<code>weather_data.csv</code>):</strong></label>
+    <textarea id="csv-input">City,Temperature
+New York,72.5
+Chicago,68.0
+New York,75.0
+Miami,invalid
+Chicago,71.5
+Miami,85.0
+New York,70.0
+Unknown,missing</textarea>
+
+    <br>
+    <button id="run-btn">Process Weather Data</button>
+
+    <h3>Console / Warning Log</h3>
+    <pre id="console-output">Waiting for program run...</pre>
+
+    <h3>Generated Report File (<code>weather_summary.txt</code>)</h3>
+    <pre id="file-output">Report will appear here after processing.</pre>
+
+    <!-- PyScript Logic -->
+    <script type="py">
+import csv
+import io
+import statistics
+from pyscript import document, when
+
+@when("click", "#run-btn")
+def process_weather_data(event):
+    console_element = document.querySelector("#console-output")
+    file_element = document.querySelector("#file-output")
+    
+    console_element.innerText = ""
+    file_element.innerText = ""
+    logs = []
+
+    # 1. Simulate File Reading & Exception Handling (FileNotFound / Read Errors)
+    try:
+        csv_data = document.querySelector("#csv-input").value
+        if not csv_data.strip():
+            raise FileNotFoundError("The file 'weather_data.csv' is empty or missing.")
+        
+        # Wrap string in StringIO to simulate reading from an actual disk file
+        csv_file = io.StringIO(csv_data)
+        reader = csv.reader(csv_file)
+        header = next(reader, None)  # Skip CSV header row
+        
+    except FileNotFoundError as err:
+        console_element.innerText = f"[ERROR] {err}"
+        file_element.innerText = "Processing aborted: Input file not found."
+        return
+    except Exception as err:
+        console_element.innerText = f"[ERROR] Unexpected error reading file: {err}"
+        return
+
+    # 2. Process Rows & Build Dictionary of Lists
+    city_temps = {}
+
+    for row_num, row in enumerate(reader, start=2):
+        if not row or len(row) < 2:
+            continue  # Skip blank lines
+            
+        city = row[0].strip()
+        temp_str = row[1].strip()
+
+        # 3. Exception Handling for Numeric Data (ValueError)
+        try:
+            temp = float(temp_str)
+            if city not in city_temps:
+                city_temps[city] = []
+            city_temps[city].append(temp)
+        except ValueError:
+            logs.append(f"Warning (Row {row_num}): Skipping invalid temperature '{temp_str}' for city '{city}'")
+
+    # Display Warning Logs
+    if logs:
+        console_element.innerText = "\n".join(logs)
+    else:
+        console_element.innerText = "Data processed smoothly with zero conversion errors!"
+
+    # 4. Calculate Averages & Generate Output File
+    summary_lines = ["=== WEATHER SUMMARY REPORT ==="]
+
+    for city, temps in city_temps.items():
+        if temps:
+            avg_temp = statistics.mean(temps)
+            summary_lines.append(f"{city}: {len(temps)} readings, Avg Temp: {avg_temp:.1f}°F")
+
+    summary_content = "\n".join(summary_lines)
+
+    # 5. Simulate Writing to Output File ('weather_summary.txt')
+    try:
+        # In PyScript, we can write directly to Pyodide's virtual filesystem
+        with open("weather_summary.txt", "w") as f:
+            f.write(summary_content)
+
+        # Read back from virtual file to display result
+        with open("weather_summary.txt", "r") as f:
+            file_element.innerText = f.read()
+
+    except IOError as err:
+        console_element.innerText += f"\n[ERROR] Failed to write report file: {err}"
+    </script>
+
+</body>
+</html>
