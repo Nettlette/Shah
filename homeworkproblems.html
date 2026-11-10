@@ -181,7 +181,7 @@
                     Homework 3</h3>
             </div>
             <div class="col-12 border border-primary-subtle border-3">
-                <div id="1" class="collapse show">
+                <div id="3" class="collapse">
                     <div class="row">
                         <div class="col-6">
                             <p>Write a program that reads raw temperature data from a CSV (comma separated values) file, calculates summary statistics, handles potential file/formatting errors, and writes a clean summary report to a new text file.</p>
@@ -220,6 +220,54 @@ Miami: 1 readings, Avg Temp: 85.0°F</p>
                                 <li>Use the <span class="quote">statistics</span> or <span class="quote">math</span> library to calculate the average, minimum, and maximum.</li>
                                 <li>Test with other input files and when no file exists.</li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12mt-4">
+                <h3 data-bs-toggle="collapse" href="#4" role="button" aria-expanded="true" aria-controls="4">
+                    Homework 4</h3>
+            </div>
+            <div class="col-12 border border-primary-subtle border-3">
+                <div id="4" class="collapse show">
+                    <div class="row">
+                        <div class="col-6">
+                            <p>Imagine you are coding a game where an adventurer checks the items inside their magical backpack. Look at the Python code below carefully. Pay special attention to the data types of the values inside the dictionary.</p>
+                            
+                            <textarea >
+                                import random
+
+def count_valid_items(inventory):
+    total = 0
+    
+    # Loop through each item and its quantity in the dictionary
+    for item_name, quantity in inventory.items():
+        # Check if the quantity is a whole number (integer)
+        if type(quantity) == int:
+            total += quantity
+            
+    return total
+
+# The adventurer's backpack dictionary
+my_backpack = {
+    "health potions": 4,
+    "magic scrolls": "three",
+    "gold coins": 125,
+    "mana crystals": 2.5,
+    "ancient keys": 1
+}
+
+# Run the function
+result = count_valid_items(my_backpack)
+print(result)
+                            </textarea>
+                            <b>Questions:</b>
+                            <ol>
+                                <li>What data types are present in the <span class="quote">my_backback</span> dictionary values? (Hint: Look closely at <span class=quote">"three"</span> and <span class="quote">2.5</span>)</li>
+                                <li>What does the <span class="quote">type(quantity) == int</span> check do inside the <span class="quote">for</span> loop? Which items will pass this check?</li>
+                                <li>What is the final number that gets printed out when <span class="quote">print(result)</span> runs?</li>
+                            </ol>
                         </div>
                     </div>
                 </div>

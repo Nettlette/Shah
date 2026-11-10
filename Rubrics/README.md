@@ -95,3 +95,10 @@ Denver, 54.0
 Output:<br>
 === WEATHER SUMMARY REPORT ===<br>
 Denver: 2 readings, Avg Temp: 52.0°F
+
+# Homework 4
+| Category | Full Points | Partial Points | No Points |
+| --- | --- | --- | --- |
+| Data Types Identification | 3pts<br>Correctly identifies all three data types present in the dictionary values (int, str, float) and matches them to the correct examples. | 2pts<br>Identifies most data types but misses or mislabels one | 0pts<br>None correct |
+| Condition and Filtering Logic | 4pts<br>Accurately explains that type(quantity) == int checks if the value is a whole number. Correctly lists which items pass (health poitions, gold coins, ancient keys) and which fail (magic scrolls, mana crystals) | 2-3pts<br>Understands that it checks for numbers or whole numbers, but fails to list all passing/failing items accurately. | 0-1pts<br>Does not understand what the check accomplishes. |
+| Final Output Calculation | 3pts<br>Correctly calculates the final sum (4+125+1=130) and explains why the string and float were excluded from the total. | 2pts<br>Arrives at the correct answer (130) but provides little to no explanation of how. | 0-1pts<br>Incorrect final number. |
